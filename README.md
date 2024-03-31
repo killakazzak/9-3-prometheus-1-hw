@@ -21,11 +21,27 @@ sudo useradd --no-create-home --shell /bin/false prometheus
 ```
 Найдём последнюю версию Prometheus на :GitHub
 ```
-wget https://github.com/prometheus/prometheus/releases/download/v2.40.1/
-prometheus-2.40.1.linux-386.tar.gz
+wget https://github.com/prometheus/prometheus/releases/download/v2.51.1/prometheus-2.51.1.linux-386.tar.gz
 ```
 
 Извлекаем архив и скопируем файлы в необходимые директории:
+```
+tar xfvz prometheus-2.51.1.linux-386.tar.gz
+cd prometheus-2.51.1.linux-386
+mkdir /etc/prometheus
+mkdir /var/lib/prometheus
+cp promtool prometheus /usr/local/bin/
+cp -R console_libraries/ /etc/prometheus/
+cp prometheus.yml /etc/prometheus/
+chown -R prometheus:prometheus /etc/prometheus/ /var/lib/prometheus/
+chown  prometheus:prometheus /usr/local/bin/promtool /usr/local/bin/prometheus
+```
+Проверяем
+```
+/usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml --storage.tsdb.path /var/lib/prometheus/ --web.console.templates=/etc/prometheus/consoles --web.console.libraries=/etc/prometheus/console_libraries
+```
+![image](https://github.com/killakazzak/hw-prometheus-01/assets/32342205/9bd4edcd-1a66-4513-bf3b-5afee96acefd)
+
 ```
 sudo systemctl restart zabbix-server apache2 # zabbix-agent 
 sudo systemctl enable zabbix-server apache2 # zabbix-agent
