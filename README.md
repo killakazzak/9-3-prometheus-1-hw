@@ -34,6 +34,7 @@ cp promtool prometheus /usr/local/bin/
 cp -R console_libraries/ /etc/prometheus/
 cp prometheus.yml /etc/prometheus/
 chown -R prometheus:prometheus /etc/prometheus/ /var/lib/prometheus/
+chown -R prometheus:prometheus /var/lib/prometheus
 chown  prometheus:prometheus /usr/local/bin/promtool /usr/local/bin/prometheus
 ```
 Проверяем
@@ -42,10 +43,32 @@ chown  prometheus:prometheus /usr/local/bin/promtool /usr/local/bin/prometheus
 ```
 ![image](https://github.com/killakazzak/hw-prometheus-01/assets/32342205/9bd4edcd-1a66-4513-bf3b-5afee96acefd)
 
+Создаем сервис
+```
+vim /etc/systemd/system/prometheus.service
+[Unit]
+Description=Prometheus Service Netology Lesson 9.4
+After=network.target
+[Service]
+User=prometheus
+Group=prometheus
+Type=simple
+ExecStart=/usr/local/bin/prometheus \
+--config.file /etc/prometheus/prometheus.yml \
+--storage.tsdb.path /var/lib/prometheus/ \
+--web.console.templates=/etc/prometheus/consoles \
+--web.console.libraries=/etc/prometheus/console_libraries
+ExecReload=/bin/kill -HUP $MAINPID Restart=on-failure
+[Install]
+WantedBy=multi-user.target
+```
+```
+systemctl daemon-reload
+systemctl enable --now prometheus.service
 ```
 sudo systemctl restart zabbix-server apache2 # zabbix-agent 
 sudo systemctl enable zabbix-server apache2 # zabbix-agent
-
+```
 ```
 
 
