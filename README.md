@@ -207,7 +207,7 @@ systemctl status grafana-server.service
 ```
 ![image](https://github.com/killakazzak/hw-prometheus-01/assets/32342205/50d11910-3641-4c0f-b79f-685909913a45)
 
-
+![image](https://github.com/killakazzak/hw-prometheus-01/assets/32342205/86ab19d3-cb2a-4615-b1c3-50f628ef4c33)
 
 ---
 
