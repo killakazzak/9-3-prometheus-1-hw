@@ -178,6 +178,10 @@ systemctl restart prometheus
 Эти задания дополнительные. Их можно не выполнять. Это не повлияет на зачёт. Вы можете их выполнить, если хотите глубже разобраться в материале.
 
 ### Решение Задание 3*
+![image](https://github.com/killakazzak/hw-prometheus-01/assets/32342205/8aa1856e-72d2-4cbf-a4ea-755d09369fc1)
+![image](https://github.com/killakazzak/hw-prometheus-01/assets/32342205/e51b29ea-8e71-4191-a650-b0e92a1aa4ec)
+![image](https://github.com/killakazzak/hw-prometheus-01/assets/32342205/f5a6ace6-ad6c-435e-bb47-784e170f762f)
+
 
 ---
 
