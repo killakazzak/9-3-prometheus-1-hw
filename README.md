@@ -153,6 +153,11 @@ scrape_configs:
 ```
 systemctl restart prometheus
 ```
+
+![image](https://github.com/killakazzak/hw-prometheus-01/assets/32342205/1551ffb4-b098-47b5-8e44-d5cc29748924)
+
+![image](https://github.com/killakazzak/hw-prometheus-01/assets/32342205/48772da3-4ef3-49be-b5ca-5cd32d996240)
+
 ---
 
 ### Задание 3*
