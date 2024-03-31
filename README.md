@@ -219,6 +219,11 @@ systemctl status grafana-server.service
 
 ### Решение Задание 5*
 
+![image](https://github.com/killakazzak/hw-prometheus-01/assets/32342205/5eb6e180-d2cf-4a02-9b5c-eded3d0842da)
+![image](https://github.com/killakazzak/hw-prometheus-01/assets/32342205/44427ec5-98b5-48f4-8a34-4498530e0f70)
+![image](https://github.com/killakazzak/hw-prometheus-01/assets/32342205/0e7ae2b3-49c1-4754-a007-82bd3f511b0e)
+
+
 ## Критерии оценки
 1. Выполнено минимум 3 обязательных задания
 2. Прикреплены требуемые скриншоты
