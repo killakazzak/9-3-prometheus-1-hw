@@ -66,10 +66,12 @@ WantedBy=multi-user.target
 systemctl daemon-reload
 systemctl enable --now prometheus.service
 ```
-sudo systemctl restart zabbix-server apache2 # zabbix-agent 
-sudo systemctl enable zabbix-server apache2 # zabbix-agent
+
+Проверяем
 ```
+systemctl status prometheus
 ```
+![image](https://github.com/killakazzak/hw-prometheus-01/assets/32342205/44c1935b-326c-4a44-9dcb-ab56f10064c4)
 
 
 ### Задание 2*
@@ -85,6 +87,9 @@ sudo systemctl enable zabbix-server apache2 # zabbix-agent
 - [ ] Прикрепите к файлу README.md скриншот systemctl status node-exporter, где будет написано: node-exporter.service — Node Exporter Netology Lesson 9.4 — [Ваши ФИО]
 
 ### Решение Задание 2*
+
+
+
 ---
 
 ### Задание 3*
