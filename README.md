@@ -15,7 +15,23 @@
 
 ### Решение Задание 1*
 
----
+Создаём пользователя Prometheus
+```
+sudo useradd --no-create-home --shell /bin/false prometheus
+```
+Найдём последнюю версию Prometheus на :GitHub
+```
+wget https://github.com/prometheus/prometheus/releases/download/v2.40.1/
+prometheus-2.40.1.linux-386.tar.gz
+```
+
+Извлекаем архив и скопируем файлы в необходимые директории:
+```
+sudo systemctl restart zabbix-server apache2 # zabbix-agent 
+sudo systemctl enable zabbix-server apache2 # zabbix-agent
+
+```
+
 
 ### Задание 2*
 Установите Node Exporter.
