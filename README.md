@@ -192,6 +192,23 @@ systemctl restart prometheus
 - [ ] Прикрепите к файлу README.md скриншот левого нижнего угла интерфейса, чтобы при наведении на иконку пользователя были видны ваши ФИО
 
 ### Решение Задание 4*
+
+Скачиваем и устанавливаем последнюю версию Grafana
+```
+wget https://dl.grafana.com/oss/release/grafana_10.4.1_amd64.deb
+dpkg -i grafana_10.4.1_amd64.deb
+```
+![image](https://github.com/killakazzak/hw-prometheus-01/assets/32342205/b1da6751-1eca-47fa-81e6-19d117a1bc01)
+
+Проверяем установку и работу службы
+```
+systemctl enable --now grafana-server.service
+systemctl status grafana-server.service
+```
+![image](https://github.com/killakazzak/hw-prometheus-01/assets/32342205/50d11910-3641-4c0f-b79f-685909913a45)
+
+
+
 ---
 
 ### Задание 5*
