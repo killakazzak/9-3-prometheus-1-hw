@@ -88,7 +88,36 @@ systemctl status prometheus
 
 ### Решение Задание 2*
 
+Скачиваем и извлекаем архив последней версии node_exporter
+```
+wget https://github.com/prometheus/node_exporter/releases/download/v1.7.0/node_exporter-1.7.0.linux-386.tar.gz
+Извлекаем архив и скопируем файлы в необходимые директории:
+tar xvfz node_exporter-1.7.0.linux-386.tar.gz
+cd node_exporter-1.7.0.linux-386/
+mkdir /etc/prometheus/node-exporter
+cp ./* /etc/prometheus/node-exporter/
+chown -R prometheus:prometheus /etc/prometheus/node-exporter/
+```
+Создаем сервис node-exporter.service
+```
+vim /etc/systemd/system/node-exporter.service
+[Unit]
+Description=Node Exporter Lesson 9.4
+After=network.target
+[Service]
+User=prometheus
+Group=prometheus
+Type=simple
+ExecStart=/etc/prometheus/node-exporter/node_exporter
+[Install]
+WantedBy=multi-user.target
+```
+Проверяем службу
 
+```
+systemctl enable --now  node-exporter
+systemctl statu node-exporter
+```
 
 ---
 
